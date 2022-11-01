@@ -1,12 +1,12 @@
 FROM node:14.1-alpine AS build-env
 WORKDIR /app
 COPY . .
-RUN npm install 
+RUN npm install --prefix /project-mcc-react-client-crud/
 
 ENV PATH="./node_modules/.bin:$PATH"
 
 COPY . ./
-RUN npm run build
+RUN npm run build --prefix /project-mcc-react-client-crud/
 
 FROM nginx:1.17-alpine
 RUN apk update && apk add ca-certificates nginx && rm -rf /var/cache/apk/*
