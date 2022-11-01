@@ -1,6 +1,6 @@
 FROM node:14.1-alpine AS build-env
 WORKDIR /app
-COPY . .
+COPY ./project-mcc-react-client-crud/ .
 RUN npm install
 
 ENV PATH="./node_modules/.bin:$PATH"
