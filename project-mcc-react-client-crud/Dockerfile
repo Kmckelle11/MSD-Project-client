@@ -6,7 +6,7 @@ RUN npm install
 ENV PATH="./node_modules/.bin:$PATH"
 
 COPY . ./
-RUN npm run build --prefix ./project-mcc-react-client-crud
+RUN npm run build --prefix app/project-mcc-react-client-crud
 
 FROM nginx:1.17-alpine
 RUN apk update && apk add ca-certificates nginx && rm -rf /var/cache/apk/*
